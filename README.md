@@ -1,5 +1,8 @@
 # go-suffixarray-16
 
+![tests workflow result](https://github.com/beaverden/go-suffixarray-16/actions/workflows/go.yml/badge.svg)
+
+
 Extension of the standard [suffixarray](https://golang.org/pkg/index/suffixarray/)
 
 The current real memory footprint of `suffixarray` is `5N` if `len(data) <= MaxInt32` and `9N` otherwise.
