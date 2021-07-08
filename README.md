@@ -22,3 +22,6 @@ which translates roughly to `3N` (the size of the index is minuscule). We have r
 It's fair to say that the more chunks you have, the more the slices will add their size to the memory footprint. But
 having `32769` chunks only adds `32769` slices and `32769` suffixarray.Index, which is a drop in the ocean, compared
 to gigabyte sized memory
+
+Calling `suffixarray` with a slice sized greater than `MaxInt16` will fallback to the existing `32` or `64` bit implementations, so
+make sure you send the data properly.
