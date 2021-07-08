@@ -14,7 +14,7 @@ Since indicies are not packed, some ints use 32 or 64 bytes, but the index can b
 This repo is a snapshot of `suffixarray` with `gen.go` modified to generate a `16 bit` implementation.
 
 ## How to use
-If you have a `1GB` glob of strings that you want to convert into a suffixarray, you will normally need 
+If you have a `1GB` blob of strings that you want to convert into a suffixarray, you will normally need 
 `1GB + sizeof(int32) * 1GB = 5GB`. But if you split your blob into chunks of size `MaxInt16 = 32767`,
 it will generate multiple suffix arrays, but each will hold indicies up to `MaxInt16`.
 
