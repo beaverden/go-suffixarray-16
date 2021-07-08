@@ -31,3 +31,16 @@ max 2 bytes per index.
 
 Calling `suffixarray` with a slice sized greater than `MaxInt16` will fallback to the existing `32` or `64` bit implementations, so
 make sure you send the data properly.
+
+## Correctness
+Having multiple arrays implies that the data has no significant boundaries or can be separated into semantically equivalent chunks.
+For example, If we split the string `test` into `te` and `st`, then obviously none of the two arrays will match `test` or `es`, or other.
+
+Although a limitation, if we can tokenize the text, for example split a sentence on spaces, then
+We can have multiple arrays that will work properly on word search 
+
+## Performance
+
+Obviously, the performance is decreased since instead of scanning one slice, we are scanning multiple ones. Expect a reasonable drop in speed.
+Also, since there are multiple arrays now, scanning can be done in a multithreaded manner.
+
